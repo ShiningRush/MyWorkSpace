@@ -41,6 +41,9 @@ namespace MyWorkSpace.MPA
 
             app.UseMvc(routes =>
             {
+                // area route
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Default}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
