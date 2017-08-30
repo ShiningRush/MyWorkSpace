@@ -1,0 +1,27 @@
+﻿@model List<MyWorkSpace.MPA.Models.MenuModel>
+
+@foreach (var eachMenu in Model)
+{
+    <li>
+        <a href="@eachMenu.Url">
+            <i class="@eachMenu.IconStr"></i> @eachMenu.MenuText
+            @if (eachMenu.ChildItem != null)
+            {
+                <span class="fa arrow"></span>
+            }
+        </a>
+        @if (eachMenu.ChildItem != null)
+        {
+            <ul class="nav nav-second-level">
+                @foreach (var eachChileMenu in eachMenu.ChildItem)
+                {
+                    <li>
+                        <a href="@eachChileMenu.Url">
+                            <i class="@eachChileMenu.IconStr"></i>@eachChileMenu.MenuText
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    </li>
+}

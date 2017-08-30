@@ -268,7 +268,7 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        @Html.RenderPartial("Menus", "GlobalSub", new { Area = "" })
+                        @await Component.InvokeAsync("Menu")
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
