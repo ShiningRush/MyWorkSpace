@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyWorkSpace.Domain.AggregateRoots.UserAggregateRoot;
 using MyWorkSpace.Domain.Infrastructure.DataAccess;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace MyWorkSpace.MPA
 {
@@ -39,6 +40,11 @@ namespace MyWorkSpace.MPA
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             app.UseStaticFiles();
 
