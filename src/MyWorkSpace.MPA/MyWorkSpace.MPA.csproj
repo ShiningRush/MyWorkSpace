@@ -17,4 +17,10 @@
     <ProjectReference Include="..\MyWorkSpace.Domain\MyWorkSpace.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="MyWorkSpace.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

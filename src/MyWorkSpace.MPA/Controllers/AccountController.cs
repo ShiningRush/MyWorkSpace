@@ -5,18 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyWorkSpace.Domain.AggregateRoots.UserAggregateRoot;
 using MyWorkSpace.MPA.Models;
+using Microsoft.AspNetCore.Authorization;
+using MyWorkSpace.Domain.Service;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MyWorkSpace.MPA.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
-        private IUserRepository _userRepository = null;
+        private readonly IUserRepository _userRepository;
+        private readonly LoginService _loginService;
 
-        public AccountController(IUserRepository userRepository)
+        public AccountController(IUserRepository userRepository, LoginService loginService)
         {
             _userRepository = userRepository;
+            _loginService = loginService;
         }
 
         // GET: Account
@@ -28,10 +33,7 @@ namespace MyWorkSpace.MPA.Controllers
         [HttpPost]
         public IActionResult Login(AccountModel loginModel)
         {
-            var matchedUser = _userRepository.GetUserByAccount(loginModel.Account);
-            var isCorrectUser = matchedUser?.IsMatch(loginModel.Password);
-
-            if(isCorrectUser.HasValue && isCorrectUser.Value)
+            if(_loginService.SignOn(loginModel.Account, loginModel.Password))
                 return RedirectToAction("Index", "Default", new { Area = "Dashbord" });
             loginModel.ErrMsg = "帐号密码不匹配，请确认";
 
