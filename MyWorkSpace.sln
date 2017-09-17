@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CBB94EC0-4BD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DAD3AAC0-DAEE-4447-A1DC-8433CFD81C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorkSpace.Framework", "src\MyWorkSpace.Framework\MyWorkSpace.Framework.csproj", "{41C4C60B-2089-404D-AED9-331F1DD7F528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWorkSpace.Framework", "src\MyWorkSpace.Framework\MyWorkSpace.Framework.csproj", "{41C4C60B-2089-404D-AED9-331F1DD7F528}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

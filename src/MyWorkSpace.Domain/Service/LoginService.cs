@@ -25,11 +25,20 @@ namespace MyWorkSpace.Domain.Service
             if (isCorrectUser.HasValue ? isCorrectUser.Value : false)
             {
                 var identyGuid = Guid.NewGuid().ToString();
-                _memoryCache.GetOrCreate(identyGuid,cacheEntry=>  )
-                return true;
+                _memoryCache.GetOrCreate(identyGuid, cacheEntry => matchedUser.UserName);
+                return identyGuid;
             }
 
-            return ;
+            return null;
+        }
+
+        public string GetLoginInfo(string identyGuid)
+        {
+            string userName;
+            if (!_memoryCache.TryGetValue(identyGuid, out userName))
+                return null;
+
+            return userName;
         }
     }
 }

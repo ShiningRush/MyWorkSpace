@@ -7,12 +7,13 @@ using MyWorkSpace.Domain.AggregateRoots.UserAggregateRoot;
 using MyWorkSpace.MPA.Models;
 using Microsoft.AspNetCore.Authorization;
 using MyWorkSpace.Domain.Service;
+using MyWorkSpace.Domain;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MyWorkSpace.MPA.Controllers
 {
-    [Authorize]
+    
     public class AccountController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -33,10 +34,14 @@ namespace MyWorkSpace.MPA.Controllers
         [HttpPost]
         public IActionResult Login(AccountModel loginModel)
         {
-            if(_loginService.SignOn(loginModel.Account, loginModel.Password))
+            var identyKey = _loginService.SignOn(loginModel.Account, loginModel.Password);
+            if (identyKey != null)
+            {
+                Response.Cookies.Append(Consts.COOKIE_LOGIN_IDENTITY, identyKey);
                 return RedirectToAction("Index", "Default", new { Area = "Dashbord" });
-            loginModel.ErrMsg = "帐号密码不匹配，请确认";
+            }
 
+            loginModel.ErrMsg = "帐号密码不匹配，请确认";
             return View(loginModel);
         }
 
