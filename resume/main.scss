@@ -1,0 +1,32 @@
+$main-color: blue;
+
+body{
+    *{
+        box-sizing: border-box;
+    }
+
+    font-size: 20px;
+    min-height: 1080px;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    opacity: 0.6;
+    border-radius: 15px;
+    padding: 1px 25px 25px 25px;
+    min-height: 500px;
+
+    h1{
+        opacity: 1;
+        padding: 10px 0px;
+        margin: 10px 0;
+        border-bottom: solid #a8afaf 1px;
+    }
+
+    li{
+        margin-top:20px;
+    }
+}
