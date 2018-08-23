@@ -78,4 +78,16 @@ body{
             content: "职位："
         }
     }
+
+    .industry{
+        &:before{
+            content: "公司所属行业："
+        }
+    }
+
+    .project{
+        &:before{
+            content: "主要负责项目："
+        }
+    }
 }

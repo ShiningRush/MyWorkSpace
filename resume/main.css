@@ -73,3 +73,11 @@ body * {
 .weContainer .jobname:before {
   content: "职位：";
 }
+
+.weContainer .industry:before {
+  content: "公司所属行业：";
+}
+
+.weContainer .project:before {
+  content: "主要负责项目：";
+}
