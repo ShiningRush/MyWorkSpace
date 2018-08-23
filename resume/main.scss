@@ -11,13 +11,14 @@ body{
 }
 
 .container{
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 720px;
+    margin: 30px auto;
     background-color: white;
     opacity: 0.6;
     border-radius: 15px;
     padding: 1px 25px 25px 25px;
     min-height: 500px;
+    box-shadow: 0px 0px 20px 9px #c1b9b9;
 
     h1{
         opacity: 1;
@@ -26,7 +27,55 @@ body{
         border-bottom: solid #a8afaf 1px;
     }
 
+    .decriptionRow{
+        color: #696969;
+
+        span{
+            font-weight:700;
+            font-size: 1em;
+            color: black;
+        }
+    }
+
     li{
         margin-top:20px;
+    }
+}
+
+.profileContainer{
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 20px;
+
+    .decriptionRow{
+        width: 320px;
+        margin-top:15px;
+    }
+}
+
+.weContainer{
+    display: flex;
+    font-size: 20px;
+    flex-flow: row wrap;
+    div{
+        width: 300px;
+    }
+
+    .company{
+        &:before{
+            content: "公司名："
+        }
+    }
+
+    .date{
+        &:before{
+            content: "任职期间："
+        }
+    }
+
+    .jobname{
+        &:before{
+            content: "职位："
+        }
     }
 }
