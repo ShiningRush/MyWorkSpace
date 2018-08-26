@@ -1,4 +1,18 @@
-$main-color: blue;
+$process-color:#fba1b7;
+@mixin titleText{
+    font-weight:700;
+    font-size: 1em;
+    color: black;
+}
+
+@mixin weTitleText($content) {
+    margin-top:10px;
+
+    &:before{
+        content:$content;
+        @include titleText;
+    }
+}
 
 body{
     *{
@@ -31,9 +45,7 @@ body{
         color: #696969;
 
         span{
-            font-weight:700;
-            font-size: 1em;
-            color: black;
+            @include titleText;
         }
     }
 
@@ -48,46 +60,78 @@ body{
     margin-left: 20px;
 
     .decriptionRow{
-        width: 320px;
+        min-width: 320px;
         margin-top:15px;
     }
 }
 
+ul.skillContainer{
+    padding-left: 20px;
+    list-style: none;
+
+    li{
+        padding-top:20px;
+    }
+}
+
+.process{
+    float: left;
+    position: relative;
+    height: 2px;
+    display: block;
+    width: 95%;
+    background-color: rgb(162, 162, 162);
+    border-radius: 2px;
+    margin: .5rem 0 1rem;
+    overflow: visible;
+    margin-bottom: 10px;
+
+    .determinate{
+        background-color: $process-color;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        .fa{
+            font-size: 13px;
+            position: absolute;
+            top: -4px;
+            right: -2px;
+            margin-left: 50%;
+            color: $process-color;
+        }
+    }
+}
+
+
+
 .weContainer{
+    margin-top:30px;
     display: flex;
     font-size: 20px;
     flex-flow: row wrap;
+    color: #696969;
     div{
-        width: 300px;
+        min-width: 300px;
     }
 
     .company{
-        &:before{
-            content: "公司名："
-        }
+        @include weTitleText("公司名：")
     }
 
     .date{
-        &:before{
-            content: "任职期间："
-        }
+        @include weTitleText("任职期间：")
     }
 
     .jobname{
-        &:before{
-            content: "职位："
-        }
+        @include weTitleText("职位：")
     }
 
     .industry{
-        &:before{
-            content: "公司所属行业："
-        }
+        @include weTitleText("所属行业：")
     }
 
     .project{
-        &:before{
-            content: "主要负责项目："
-        }
+        @include weTitleText("负责项目：")
     }
 }

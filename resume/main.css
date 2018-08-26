@@ -48,36 +48,111 @@ body * {
 }
 
 .profileContainer .decriptionRow {
-  width: 320px;
+  min-width: 320px;
   margin-top: 15px;
 }
 
+ul.skillContainer {
+  padding-left: 20px;
+  list-style: none;
+}
+
+ul.skillContainer li {
+  padding-top: 20px;
+}
+
+.process {
+  float: left;
+  position: relative;
+  height: 2px;
+  display: block;
+  width: 95%;
+  background-color: #a2a2a2;
+  border-radius: 2px;
+  margin: .5rem 0 1rem;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+
+.process .determinate {
+  background-color: #fba1b7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.process .determinate .fa {
+  font-size: 13px;
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  margin-left: 50%;
+  color: #fba1b7;
+}
+
 .weContainer {
+  margin-top: 30px;
   display: flex;
   font-size: 20px;
   flex-flow: row wrap;
+  color: #696969;
 }
 
 .weContainer div {
-  width: 300px;
+  min-width: 300px;
+}
+
+.weContainer .company {
+  margin-top: 10px;
 }
 
 .weContainer .company:before {
   content: "公司名：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.weContainer .date {
+  margin-top: 10px;
 }
 
 .weContainer .date:before {
   content: "任职期间：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.weContainer .jobname {
+  margin-top: 10px;
 }
 
 .weContainer .jobname:before {
   content: "职位：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.weContainer .industry {
+  margin-top: 10px;
 }
 
 .weContainer .industry:before {
-  content: "公司所属行业：";
+  content: "所属行业：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.weContainer .project {
+  margin-top: 10px;
 }
 
 .weContainer .project:before {
-  content: "主要负责项目：";
+  content: "负责项目：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
 }
