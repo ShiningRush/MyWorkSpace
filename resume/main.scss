@@ -121,22 +121,26 @@ ul.skillContainer{
     }
 
     .company{
-        @include weTitleText("公司名：")
+        @include weTitleText("公司名：");
     }
 
     .date{
-        @include weTitleText("任职期间：")
+        @include weTitleText("任职期间：");
     }
 
     .jobname{
-        @include weTitleText("职位：")
+        @include weTitleText("职位：");
     }
 
     .industry{
-        @include weTitleText("所属行业：")
+        @include weTitleText("所属行业：");
     }
 
     .project{
-        @include weTitleText("负责项目：")
+        @include weTitleText("贡献与成就：");
+
+        div{
+            margin:15px 20px;
+        }
     }
 }

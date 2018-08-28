@@ -158,8 +158,12 @@ ul.skillContainer li {
 }
 
 .weContainer .project:before {
-  content: "负责项目：";
+  content: "贡献与成就：";
   font-weight: 700;
   font-size: 1em;
   color: black;
+}
+
+.weContainer .project div {
+  margin: 15px 20px;
 }
