@@ -144,3 +144,30 @@ ul.skillContainer{
         }
     }
 }
+
+.peContaner{
+    margin-top:10px;
+    display: flex;
+    font-size: 20px;
+    flex-flow: row wrap;
+    color: #696969;
+    div{
+        min-width: 300px;
+    }
+
+    .name{
+        @include weTitleText("项目名：");
+    }
+
+    .period{
+        @include weTitleText("项目周期：");
+    }
+
+    .description{
+        @include weTitleText("描述：");
+    }
+
+    .responsibility{
+        @include weTitleText("职责：");
+    }
+}

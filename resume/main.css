@@ -167,3 +167,59 @@ ul.skillContainer li {
 .weContainer .project div {
   margin: 15px 20px;
 }
+
+.peContaner {
+  margin-top: 10px;
+  display: flex;
+  font-size: 20px;
+  flex-flow: row wrap;
+  color: #696969;
+}
+
+.peContaner div {
+  min-width: 300px;
+}
+
+.peContaner .name {
+  margin-top: 10px;
+}
+
+.peContaner .name:before {
+  content: "项目名：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.peContaner .period {
+  margin-top: 10px;
+}
+
+.peContaner .period:before {
+  content: "项目周期：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.peContaner .description {
+  margin-top: 10px;
+}
+
+.peContaner .description:before {
+  content: "描述：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
+
+.peContaner .responsibility {
+  margin-top: 10px;
+}
+
+.peContaner .responsibility:before {
+  content: "职责：";
+  font-weight: 700;
+  font-size: 1em;
+  color: black;
+}
