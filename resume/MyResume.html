@@ -53,7 +53,7 @@
         <li>
           <div>Golang</div>
           <div class="process">
-            <div class="determinate" style="width: 90%;"><i class="fa fa-circle"></i></div>
+            <div class="determinate" style="width: 99%;"><i class="fa fa-circle"></i></div>
           </div>
         </li>
         <li>
@@ -200,19 +200,74 @@
           </div>
         </div>
         <div class="peContaner">
-          <div class="name">CRM报表服务</div>
-          <div class="period">2018/04 - Now</div>
+          <div class="name">全院API网关</div>
+          <div class="period">2017/09 - 2018/02</div>
           <div class="description">
-            服务基于Go语言，负责从各个分散的业务数据库拉取数据，为CRM的查询建立数据集市。
+            网关基于OAuth2.0协议，使用CSharp开发，在于为全院系统提供对外的接口授权。
           </div>
           <div class="responsibility">
             <ol>
               <li>所有设计及Coding工作</li>
-              <li>在负责期间完成了从Mssql到Mysql的数据迁移</li>
-              <li>使用DDD将原服务拆分为了用户服务和账户服务，便于迭代与维护</li>
-              <li>为服务添加了依赖管理( 基于Dep )，让后继开发者能够更加快速地搭建环境</li>
-              <li>升级了基础设施，由Micro到Grpc，并为了grpc开发了consul的resolver</li>
-              <li>提炼了一套基于Task的工作模型，包括Dashboard，点击访问</li>
+              <li>使用DDD分解了内部业务边界，每个业务域以插件形式运行于网关之下，便于插拔。</li>
+              <li>为了解耦业务边界，研发了消息中间件: ServiceAnt</li>
+              <li>为了便于客户端接入，开发了Java与C#的客户端</li>
+            </ol>
+          </div>
+        </div>
+        <div class="peContaner">
+          <div class="name">全院一卡通</div>
+          <div class="period">2017/10 - 2018/04</div>
+          <div class="description">
+            本项目是作为公司主产品的支撑产品，对医院客户信息（目前核心是支付）进行整合，最终目标是实现区域医联体。<br>
+            前端：<br>
+            <br>
+            1，项目前后端分离，前端采用VueJs+ElementUI快速构建SPA程序<br>
+            2，前后端通信使用RESTFulApi, 并用Oauth2协议保证安全性<br>   
+            3，前端采用Vuex管理token与用户登陆信息<br>   
+            4，基于Axios的拦截器完成了对后端api调用时的token自动注入以及返回状态验证<br>
+            5，封装了大量共通Component与自定义指令以提高开发效率<br> 
+            7，使用Webpack模块化项目代码以及构建打包<br>  
+            8，利用webpack的异步加载配合Vue提供的异步Component实现按需加载<br>
+
+            后端：<br>
+            <br>
+            1，使用基于.Net Framewokr4.5.2的Abp框架进行改造，实现了基于应用层动态生成WebApi并集成Oauth2的客户端与密码模式以保证接口安全性<br>
+            2，以插件模块动态加载的方式配合DDD的限界上下文初步完整落地了DDD<br>
+            3，松耦合设计，做了大量的单元测试来保证代码质量和以后的可维护性。<br>
+            4，基于Oauth2.0协议拓展了三种认证方式以应对不同场景的API接入安全性控制<br>
+            5，利用Jekins完成CI与自动打包，大大降低了产品出错的概率和节省了成本<br>
+            6，将本项目涉及到的EventBus开源到了GitHub，地址：https://github.com/ShiningRush/ServiceAnt<br>
+          </div>
+          <div class="responsibility">
+            <ol>
+              <li>前后端架构设计，及基础Demo代码落地</li>
+              <li>参与领域建模分析，建立领域模型</li>
+              <li>技术预研，以及解决研发过程碰见的性能问题</li>
+            </ol>
+          </div>
+        </div>
+        <div class="peContaner">
+          <div class="name">全院自助系统</div>
+          <div class="period">2016/09 - 2017/10</div>
+          <div class="description">
+            全院自助系统是本公司核心产品，主要在于解决医院现场打印报告难，人力消耗大，人工区分易出错的问题。<br>
+            <br>
+            前端采用MVC与jQuery，服务端为了保证系统的高可用，采用了SOA架构，且分离了服务端和终端以及web管理后台，保证迭代开发可以并行作业提高开发效率。<br>
+            <br>
+            在产品迭代过程带领团队完成了以下转型：<br>
+            <br>
+            1，带领团队将前端代码融入了MVC框架，并加入jQuery+easyui  <br>  
+            2，利用MVC提供的特性封装了大量公共组件，提升开发效率    <br>
+            3，开发了一些自动校验的js框架    <br>
+            4，利用MVC后台提供的Bundle功能打包以及压缩代码及资源文件   <br> 
+            <br>
+            梳理需求，预研相关技术，架构设计，并且落实到代码实现。<br>
+          </div>
+          <div class="responsibility">
+            <ol>
+              <li>前后端架构设计，及基础Demo代码落地</li>
+              <li>参与领域建模分析，建立领域模型</li>
+              <li>技术预研，以及解决研发过程碰见的性能问题</li>
             </ol>
           </div>
         </div>
