@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>XuXin'sResume</title>
+    <title>XuXin's Resume</title>
     <link rel="stylesheet" href="./main.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <h1><i class="fa fa-vcard"></i> Profile</h1>
+      <h1><i class="fa fa-vcard"></i> Profile <a href="./MyResume_en.html" class="switch">English</a></h1>
       <div class="profileContainer">
           <div class="decriptionRow"><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>徐鑫</div>
           <div class="decriptionRow"><span>生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</span>1992/2/24</div>
@@ -38,8 +38,6 @@
             <div><a href="http://resume.github.io/?shiningrush" target="_blank">Github's Resume</a></div>
             <div><a href="http://www.cnblogs.com/RobotZero/" target="_blank">博客园</a></div>
             <br>
-            
-            <div>( 也许我的工作与项目经历与贵公司岗位要求有些不匹配，但我相信自己的学习能力能够在极短时间内适应。 )</div> 
           </div>
       </div>
       <h1><i class="fa fa-paper-plane"></i> Skills</h1>
@@ -146,9 +144,26 @@
           <div>2，在构建聚合服务的同时，为golang基础设施做了良好的沉淀，如golang的构建镜像与依赖管理，采用新的构建机制使得构建速度提升了10倍以上</div>
           <div>3，协调团队利用DDD完成对遗留微服务边界的区分，引入Apigateway模式将分散的应用责任内聚</div>
           <div>4，对遗留的用户服务进行重构，将数据库统一来解决分布式事务问题，同时将业务收回达到服务自治的目的，大大提高了交付质量与交付速度</div>
+          <div>5，对组内技术人员进行技术分享，带动组员对设计的兴趣而只停留于技术表面</div>
         </div>
       </div>
       <h1><i class="fa fa-history"></i> ProjectExperience</h1>
+      <div class="peContaner">
+        <div class="name">用户体系生态系统</div>
+        <div class="period">2018/10 - Now</div>
+        <div class="description">
+          服务在于根据公司用户在交友圈的行为，如发微博、点赞、评论、收藏、关注等等，积累活跃值，并于每日的22点根据用户活跃值发放一定的内部货币，货币可用于兑换商品
+        </div>
+        <div class="responsibility">
+          <ol>
+            <li>拆分业务领域，拆分为商城、活跃值、F币三个领域</li>
+            <li>活跃值服务采用基于事件驱动的设计，接入用户行为埋点的MQ信号，使用Mongodb作为事件库存储</li>
+            <li>F币服务与商城服务使用传统的DDD设计，采用传统Mysql的关系型数据库</li>
+            <li>使用管道模式来设计重复用户行为的活跃值衰减以及反向操作的补正</li>
+            <li>使用DSL来简化对接MQ信号时的复杂逻辑</li>
+          </ol>
+        </div>
+      </div>
       <div class="peContaner">
         <div class="name">微服务网关</div>
         <div class="period">2018/09 - Now</div>
@@ -195,7 +210,7 @@
               <li>使用DDD将原服务拆分为了用户服务和账户服务，便于迭代与维护</li>
               <li>为服务添加了依赖管理( 基于Dep )，让后继开发者能够更加快速地搭建环境</li>
               <li>升级了基础设施，由Micro到Grpc，并为了grpc开发了consul的resolver</li>
-              <li>提炼了一套基于Task的工作模型，包括Dashboard，点击访问</li>
+              <li>提炼了一套基于Task的工作模型，包括Dashboard，<a href="https://github.com/ShiningRush/dolphin" target="_blank">点击访问</a></li>
             </ol>
           </div>
         </div>
